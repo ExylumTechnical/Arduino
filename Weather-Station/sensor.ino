@@ -22,7 +22,7 @@ void setup(void){
 
   wifiMulti.addAP("YOUR_SSID", "YOUR_WIFI_PASSWORD");   // add Wi-Fi networks you want to connect to
   wifiMulti.addAP("YOUR_OTHER_SSID", "YOUR_OTHER_WIFI_PASSWORD");   // for redundancy
-  wifiMulti.addAP("ANOTHER_SSID", "ANOTHER_WIFI_PASSWORD");   
+  wifiMulti.addAP("ANOTHER_SSID", "ANOTHER_WIFI_PASSWORD");   // add as many as you like
 
   Serial.println("Connecting ...");
   int i = 0;
