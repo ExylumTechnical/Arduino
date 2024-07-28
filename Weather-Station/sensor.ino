@@ -20,7 +20,9 @@ void setup(void){
   delay(10);
   Serial.println('\n');
 
-  wifiMulti.addAP("TheWiFlyist", "visitor-backfire-nerd");   // add Wi-Fi networks you want to connect to
+  wifiMulti.addAP("YOUR_SSID", "YOUR_WIFI_PASSWORD");   // add Wi-Fi networks you want to connect to
+  wifiMulti.addAP("YOUR_OTHER_SSID", "YOUR_OTHER_WIFI_PASSWORD");   // for redundancy
+  wifiMulti.addAP("ANOTHER_SSID", "ANOTHER_WIFI_PASSWORD");   
 
   Serial.println("Connecting ...");
   int i = 0;
@@ -58,11 +60,12 @@ void handleRoot() {
     int result = dht11.readTemperatureHumidity(temperature, humidity);
 
     if (result == 0) {
-      server.send(200, "text/plain", String("Temperature: "+String(temperature)+" C<br>Humidity: "+String(humidity)+" %")); // for human readable and debugging purposes
-//      server.send(200, "text/plain", String(String(temperature)+","+String(humidity)+"%")); // for CSV style data accquisition
+      server.send(200, "text/html", String("<!DOCTYPE html><html><head><title>Temp/Humidity Sensor</title></head><body><h1>Sensor Data</h1><p>Temperature: "+String(temperature)+"C</p><p>Humidity: "+String(humidity)+"</p></body></html>"));
+// server.send(200, "text/plain", String(String(temperature)+","+String(humidity)+"%")); // for CSV style data accquisition
     } else {
         // Print error message based on the error code.
-    server.send(200, "text/plain",String(DHT11::getErrorString(result)));
+    server.send(200, "text/html", String("<!DOCTYPE html><html><head><title>Temp/Humidity Sensor</title></head><body><h1>Sensor Data</h1><p>Sensor Error:"+String(DHT11::getErrorString(result))+" </p></body></html>"));
+//    server.send(200, "text/plain",String(DHT11::getErrorString(result)));
     }
 }
 
