@@ -5,7 +5,7 @@ This is meant to be a small IoT sensor that just provides the humidity and tempe
 - the DHT11 Temperature and Humidity Sensor
 - 3 jumper cables
 - The ESP8266MOD development board
-- A wireless network to connect the device to if you are using the sensor.io file if not then see the section below named sensor server
+- A wireless network to connect the device to if you are using the client.io file if using the ap.ino file then see the section below named sensor server
 
 ## Sensor Setup
 1. The signal wire for the DHT11 sensor should be connected to the D4 pin on the Arduino ESP8266 board
