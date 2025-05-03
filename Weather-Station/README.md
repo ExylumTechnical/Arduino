@@ -1,6 +1,11 @@
 # Weather Station Project
 This is meant to be a small IoT sensor that just provides the humidity and temperature of where it is placed via an http server.
 
+What this is: a fun project
+What this is not: to be used in any kind of commercial or sensitive environment
+
+Forks and suggestions are most welcome
+
 ## Requirements:
 - the DHT11 Temperature and Humidity Sensor
 - 3 jumper cables
