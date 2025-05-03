@@ -63,10 +63,10 @@ void handleRoot() {
     int temperature_f = (temperature_c * 1.8) + 32;
     if (result == 0) {
       // if all is well then print out the data in a human readable format
-      server.send(200, "text/html", String("<!DOCTYPE html><html><head><title>Temp/Humidity Sensor</title></head><body><h1>Sensor Data</h1><p>Temperature C/F: "+String(temperature_c)+"C / "+String(temperature_f)+"F</p><p>Humidity: "+String(humidity)+"</p></body></html>"));
+      server.send(200, "text/html", String("<!DOCTYPE html><html><head><script>setInterval(function(){window.location.reload();}, 1000);</script><title>Temp/Humidity Sensor</title></head><body><h1>Sensor Data</h1><p>Temperature C/F: "+String(temperature_c)+"C / "+String(temperature_f)+"F</p><p>Humidity: "+String(humidity)+"</p></body></html>"));
     } else {
         // Print error message based on the error code.
-      server.send(200, "text/html", String("<!DOCTYPE html><html><head><title>Temp/Humidity Sensor</title></head><body><h1>Sensor Data</h1><p>Sensor Error:"+String(DHT11::getErrorString(result))+" </p></body></html>"));
+      server.send(200, "text/html", String("<!DOCTYPE html><html><head><script>setInterval(function(){window.location.reload();}, 1000);</script><title>Temp/Humidity Sensor</title></head><body><h1>Sensor Data</h1><p>Sensor Error:"+String(DHT11::getErrorString(result))+" </p></body></html>"));
     }
 }
 
