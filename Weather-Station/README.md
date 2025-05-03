@@ -7,7 +7,7 @@ This is meant to be a small IoT sensor that just provides the humidity and tempe
 - The ESP8266MOD development board
 - A wireless network to connect the device to if you are using the sensor.io file if not then see the section below named sensor server
 
-## Setup:
+## Sensor Setup
 1. The signal wire for the DHT11 sensor should be connected to the D4 pin on the Arduino ESP8266 board
 2. Install the libararies ( I used the DHT11 library from Dr. Rubasha which can be found here: https://github.com/dhrubasaha08/DHT11 )
 3. Change the YOUR_SSID and YOUR_WIFI_PASSWORD in the code accordingly
@@ -17,7 +17,7 @@ This is meant to be a small IoT sensor that just provides the humidity and tempe
 
 Try breathing on the sensor and refreshing the page to verify it is reading data.
 
-## Sensor Server setup
+## Sensor Server Setup
 - Plug in the DHT sensor pin to D4 and connect it to the onboard powersource (see sensor datasheet for exact details) but generally 3.3v is the best idea
 - The data can be viewed in a web browser by browsing to the web root like http://192.168.4.1/
 - JSON data is also available on the only API endpoint http://192.168.4.1/api/data
